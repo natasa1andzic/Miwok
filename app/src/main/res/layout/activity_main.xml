@@ -24,8 +24,7 @@
     <TextView
         android:id="@+id/numbers"
         style="@style/CategoryStyle"
-        android:layout_height="88dp"
-        android:layout_marginLeft="16dp"
+        android:layout_height="@dimen/list_item_height"
         android:textStyle="bold"
         android:textSize="18sp"
         android:background="@color/category_numbers"
@@ -34,8 +33,7 @@
     <TextView
         android:id="@+id/family"
         style="@style/CategoryStyle"
-        android:layout_height="88dp"
-        android:layout_marginLeft="16dp"
+        android:layout_height="@dimen/list_item_height"
         android:textStyle="bold"
         android:textSize="18sp"
         android:background="@color/category_family"
@@ -44,8 +42,7 @@
     <TextView
         android:id="@+id/colors"
         style="@style/CategoryStyle"
-        android:layout_height="88dp"
-        android:layout_marginLeft="16dp"
+        android:layout_height="@dimen/list_item_height"
         android:textStyle="bold"
         android:textSize="18sp"
         android:background="@color/category_colors"
@@ -54,8 +51,7 @@
     <TextView
         android:id="@+id/phrases"
         style="@style/CategoryStyle"
-        android:layout_height="88dp"
-        android:layout_marginLeft="16dp"
+        android:layout_height="@dimen/list_item_height"
         android:textStyle="bold"
         android:textSize="18sp"
         android:background="@color/category_phrases"

@@ -1,28 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!-- Layout for a single list item -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    android:padding="16dp">
+    android:minHeight="88dp"
+    android:background="@color/tan_background"
+    >
 
     <ImageView
         android:id="@+id/img"
-        android:layout_width="88dp"
-        android:layout_height="88dp"
-        android:src="@mipmap/ic_launcher"
-        android:layout_marginRight="16dp"
+        android:layout_width="@dimen/list_item_height"
+        android:layout_height="@dimen/list_item_height"
+        android:background="#FFF7DA"
         />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="88dp"
-        android:background="@color/category_numbers"
+        android:id="@+id/textContainer"
+        android:layout_height="@dimen/list_item_height"
         android:orientation="vertical"
         >
     <TextView
+        android:textColor="#FFFFFF"
         android:id="@+id/miwok_text_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -30,6 +33,7 @@
         android:gravity="bottom"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="16dp"
+        android:textSize="18sp"
         android:textStyle="bold"
         tools:text="lutti" />
 
@@ -38,6 +42,8 @@
         android:layout_width="match_parent"
         android:layout_marginLeft="16dp"
         android:layout_height="0dp"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
         android:gravity="top"
         android:layout_weight="1"
         tools:text="one" />

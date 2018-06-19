@@ -13,9 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.android.miwok;
+package com.example.android.activities;
 
-import android.app.Activity;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -26,7 +25,10 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class ColorsActivity extends AppCompatActivity {
+import adapters.Word;
+import adapters.WordAdapter;
+
+public class FamilyActivity extends AppCompatActivity {
 
     MediaPlayer mp;
 
@@ -34,22 +36,25 @@ public class ColorsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.word_list);
+        getActionBar().setDisplayHomeAsUpEnabled(true);
 
 
         // Create a list of words
        final ArrayList<Word> words = new ArrayList<Word>();
-        words.add(new Word(R.drawable.color_red,"red", "weṭeṭṭi",R.raw.color_red));
-        words.add(new Word(R.drawable.color_mustard_yellow,"mustard yellow", "chiwiiṭә",R.raw.color_mustard_yellow));
-        words.add(new Word(R.drawable.color_dusty_yellow,"dusty yellow", "ṭopiisә",R.raw.color_dusty_yellow));
-        words.add(new Word(R.drawable.color_green, "green", "chokokki",R.raw.color_green));
-        words.add(new Word(R.drawable.color_brown,"brown", "ṭakaakki", R.raw.color_brown));
-        words.add(new Word(R.drawable.color_gray,"gray", "ṭopoppi",R.raw.color_gray));
-        words.add(new Word(R.drawable.color_black,"black", "kululli",R.raw.color_black));
-        words.add(new Word(R.drawable.color_white,"white", "kelelli",R.raw.color_white));
+        words.add(new Word(R.drawable.family_father,"father", "әpә",R.raw.family_father));
+        words.add(new Word(R.drawable.family_mother, "mother", "әṭa",R.raw.family_mother));
+        words.add(new Word(R.drawable.family_son, "son", "angsi", R.raw.family_son));
+        words.add(new Word(R.drawable.family_daughter, "daughter", "tune",R.raw.family_daughter));
+        words.add(new Word(R.drawable.family_older_brother,"older brother", "taachi", R.raw.family_older_brother));
+        words.add(new Word(R.drawable.family_younger_brother,"younger brother", "chalitti", R.raw.family_younger_brother));
+        words.add(new Word(R.drawable.family_older_sister,"older sister", "teṭe",R.raw.family_older_sister));
+        words.add(new Word(R.drawable.family_younger_sister,"younger sister", "kolliti",R.raw.family_younger_sister));
+        words.add(new Word(R.drawable.family_grandmother,"grandmother ", "ama", R.raw.family_grandmother));
+        words.add(new Word(R.drawable.family_grandfather,"grandfather", "paapa",R.raw.family_grandfather));
 
         // Create an {@link WordAdapter}, whose data source is a list of {@link Word}s. The
         // adapter knows how to create list items for each item in the list.
-        WordAdapter adapter = new WordAdapter(this, words, R.color.category_colors);
+        WordAdapter adapter = new WordAdapter(this, words, R.color.category_family);
 
         // Find the {@link ListView} object in the view hierarchy of the {@link Activity}.
         // There should be a {@link ListView} with the view ID called list, which is declared in the
@@ -65,9 +70,9 @@ public class ColorsActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Word word = words.get(position);
-                mp = MediaPlayer.create(ColorsActivity.this, word.getmAudioResourceId());
+                mp = MediaPlayer.create(FamilyActivity.this, word.getmAudioResourceId());
                 mp.start();
-                Toast.makeText(ColorsActivity.this, "List item clicked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(FamilyActivity.this, "List item clicked", Toast.LENGTH_SHORT).show();
             }
         });
     }

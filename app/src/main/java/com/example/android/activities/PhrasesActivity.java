@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.android.miwok;
+package com.example.android.activities;
 
 import android.media.MediaPlayer;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -25,7 +25,10 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class NumbersActivity extends AppCompatActivity {
+import adapters.Word;
+import adapters.WordAdapter;
+
+public class PhrasesActivity extends AppCompatActivity {
 
     MediaPlayer mp;
 
@@ -33,23 +36,24 @@ public class NumbersActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.word_list);
+        getActionBar().setDisplayHomeAsUpEnabled(true);
 
         // Create a list of words
-       final ArrayList<Word> words = new ArrayList<Word>();
-        words.add(new Word(R.drawable.number_one,"one", "lutti",R.raw.number_one));
-        words.add(new Word(R.drawable.number_two,"two", "otiiko", R.raw.number_two));
-        words.add(new Word(R.drawable.number_three,"three", "tolookosu", R.raw.number_three));
-        words.add(new Word(R.drawable.number_four,"four", "oyyisa",R.raw.number_four));
-        words.add(new Word(R.drawable.number_five,"five", "massokka", R.raw.number_five));
-        words.add(new Word(R.drawable.number_six,"six", "temmokka", R.raw.number_six));
-        words.add(new Word(R.drawable.number_seven,"seven", "kenekaku",R.raw.number_seven));
-        words.add(new Word(R.drawable.number_eight,"eight", "kawinta",R.raw.number_eight));
-        words.add(new Word(R.drawable.number_nine,"nine", "wo’e",R.raw.number_nine));
-        words.add(new Word(R.drawable.number_ten,"ten", "na’aacha", R.raw.number_ten));
+        final ArrayList<Word> words = new ArrayList<Word>();
+        words.add(new Word("Where are you going?", "minto wuksus",R.raw.phrase_where_are_you_going));
+        words.add(new Word("What is your name?", "tinnә oyaase'nә", R.raw.phrase_what_is_your_name));
+        words.add(new Word("My name is...", "oyaaset...",R.raw.phrase_my_name_is));
+        words.add(new Word("How are you feeling?", "michәksәs?", R.raw.phrase_how_are_you_feeling));
+        words.add(new Word("I’m feeling good.", "kuchi achit", R.raw.phrase_im_feeling_good));
+        words.add(new Word("Are you coming?", "әәnәs'aa?", R.raw.phrase_are_you_coming));
+        words.add(new Word("Yes, I’m coming.", "hәә’ әәnәm",R.raw.phrase_yes_im_coming));
+        words.add(new Word("I’m coming.", "әәnәm", R.raw.phrase_im_coming));
+        words.add(new Word("Let’s go.", "yoowutis", R.raw.phrase_lets_go));
+        words.add(new Word("Come here.", "әnni'nem",R.raw.phrase_come_here));
 
         // Create an {@link WordAdapter}, whose data source is a list of {@link Word}s. The
         // adapter knows how to create list items for each item in the list.
-        WordAdapter adapter = new WordAdapter(this, words, R.color.category_numbers);
+        WordAdapter adapter = new WordAdapter(this, words, R.color.category_phrases);
 
         // Find the {@link ListView} object in the view hierarchy of the {@link Activity}.
         // There should be a {@link ListView} with the view ID called list, which is declared in the
@@ -65,9 +69,9 @@ public class NumbersActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Word word = words.get(position);
-                mp = MediaPlayer.create(NumbersActivity.this, word.getmAudioResourceId());
+                mp = MediaPlayer.create(PhrasesActivity.this, word.getmAudioResourceId());
                 mp.start();
-                Toast.makeText(NumbersActivity.this, "List item clicked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(PhrasesActivity.this, "List item clicked", Toast.LENGTH_SHORT).show();
             }
         });
     }

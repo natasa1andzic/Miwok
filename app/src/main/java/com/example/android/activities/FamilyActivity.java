@@ -69,7 +69,7 @@ public class FamilyActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Word word = words.get(position);
-                mp = MediaPlayer.create(FamilyActivity.this, word.getmAudioResourceId());
+                mp = MediaPlayer.create(FamilyActivity.this, word.getAudioId());
                 mp.start();
                 Toast.makeText(FamilyActivity.this, "List item clicked", Toast.LENGTH_SHORT).show();
             }

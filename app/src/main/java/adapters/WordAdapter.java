@@ -31,12 +31,11 @@ import java.util.ArrayList;
 
 public class WordAdapter extends ArrayAdapter<Word>  {
 
-    private int mColorResourceId;
-
+    private int colorId;
 
     public WordAdapter(Context context, ArrayList<Word> words, int colorResourceId) {
         super(context, 0, words);
-        mColorResourceId=colorResourceId;
+        colorId=colorResourceId;
     }
 
     @Override
@@ -62,13 +61,11 @@ public class WordAdapter extends ArrayAdapter<Word>  {
         miwokTextView.setText(currentWord.getMiwokTranslation());
 
         TextView defaultTextView = (TextView) listItemView.findViewById(R.id.default_text_view);
-        defaultTextView.setText(currentWord.getDefaultTranslation());
+        defaultTextView.setText(currentWord.getDefTranslation());
 
         View textContainer = listItemView.findViewById(R.id.textContainer);
-        int color = ContextCompat.getColor(getContext(), mColorResourceId);
+        int color = ContextCompat.getColor(getContext(), colorId);
         textContainer.setBackgroundColor(color);
-
-
 
         return listItemView;
     }

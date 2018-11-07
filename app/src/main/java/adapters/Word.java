@@ -20,47 +20,52 @@ public class Word {
 
     private int imgId=NO_IMAGE;
 
-    private int mAudioResourceId;
+    private int audioId;
 
     private static final int NO_IMAGE=-1;
 
     /** Default translation for the word */
-    private String mDefaultTranslation;
+    private String defTranslation;
 
     /** Miwok translation for the word */
-    private String mMiwokTranslation;
+    private String miwokTranslation;
 
-    public Word(String defaultTranslation, String miwokTranslation,int audioResourseId) {
-        mDefaultTranslation = defaultTranslation;
-        mMiwokTranslation = miwokTranslation;
-        mAudioResourceId = audioResourseId;
+    public Word(String defaultTranslation, String mmiwokTranslation,int audioResourseId) {
+        defTranslation = defaultTranslation;
+        miwokTranslation = mmiwokTranslation;
+        audioId = audioResourseId;
     }
 
-
-    public Word(int img, String defaultTranslation, String miwokTranslation,int audioResourceId) {
+    public Word(int img, String defaultTranslation, String mmiwokTranslation,int audioResourceId) {
         imgId= img;
-        mDefaultTranslation = defaultTranslation;
-        mMiwokTranslation = miwokTranslation;
-        mAudioResourceId=audioResourceId;
+        defTranslation = defaultTranslation;
+        miwokTranslation = mmiwokTranslation;
+        audioId=audioResourceId;
     }
 
     public int getImgId() {
         return imgId;
     }
 
-    public String getDefaultTranslation() {
-        return mDefaultTranslation;
+    public int getAudioId() {
+        return audioId;
+    }
+
+    public static int getNoImage() {
+        return NO_IMAGE;
+    }
+
+    public String getDefTranslation() {
+        return defTranslation;
     }
 
     public String getMiwokTranslation() {
-        return mMiwokTranslation;
+        return miwokTranslation;
     }
 
     public boolean hasImage() {
         return imgId!= NO_IMAGE;
     }
 
-    public int getmAudioResourceId() {
-        return mAudioResourceId;
-    }
+
 }

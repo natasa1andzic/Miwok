@@ -19,19 +19,35 @@
         <activity
             android:parentActivityName=".MainActivity"
             android:name="com.example.android.activities.NumbersActivity"
-            android:label="@string/category_numbers" />
+            android:label="@string/category_numbers">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".MainActivity"/>
+        </activity>
         <activity
             android:parentActivityName=".MainActivity"
             android:name="com.example.android.activities.FamilyActivity"
-            android:label="@string/category_family" />
+            android:label="@string/category_family" >
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".MainActivity"/>
+        </activity>
         <activity
             android:parentActivityName=".MainActivity"
             android:name="com.example.android.activities.ColorsActivity"
-            android:label="@string/category_colors" />
+            android:label="@string/category_colors">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".MainActivity"/>
+        </activity>
         <activity
             android:parentActivityName=".MainActivity"
             android:name="com.example.android.activities.PhrasesActivity"
-            android:label="@string/category_phrases" />
+            android:label="@string/category_phrases">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".MainActivity"/>
+        </activity>
     </application>
 
 </manifest>

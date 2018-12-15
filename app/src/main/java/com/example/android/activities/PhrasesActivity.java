@@ -124,7 +124,7 @@ public class PhrasesActivity extends AppCompatActivity {
 				if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED)
 					// We have audio focus now.
 					// Create and setup the {@link MediaPlayer} for the audio resource associated with the current word
-					mp = MediaPlayer.create(PhrasesActivity.this, word.getmAudioResourceId());
+					mp = MediaPlayer.create(PhrasesActivity.this, word.getAudioId());
 				mp.start();
 				mp.setOnCompletionListener(mCompletionListener);
 			}

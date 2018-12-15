@@ -79,8 +79,6 @@ public class ColorsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.word_list);
 
-
-
         audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
         // Create a list of words
@@ -121,7 +119,7 @@ public class ColorsActivity extends AppCompatActivity {
                 if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED)
                     // We have audio focus now.
                     // Create and setup the {@link MediaPlayer} for the audio resource associated with the current word
-                    mp = MediaPlayer.create(ColorsActivity.this, word.getmAudioResourceId());
+                    mp = MediaPlayer.create(ColorsActivity.this, word.getAudioId());
                 mp.start();
                 mp.setOnCompletionListener(mCompletionListener);
             }

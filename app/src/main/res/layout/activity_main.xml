@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:background="@color/category_numbers">
         <TextView
-            android:id="@+id/numbers"
+            android:id="@+id/numbersTv"
             style="@style/CategoryStyle"
             android:background="?android:attr/selectableItemBackground"
             android:text="@string/category_numbers" />
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:background="@color/category_family">
         <TextView
-            android:id="@+id/family"
+            android:id="@+id/familyTv"
             style="@style/CategoryStyle"
             android:background="?android:attr/selectableItemBackground"
             android:text="@string/category_family" />
@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:background="@color/category_colors">
         <TextView
-            android:id="@+id/colors"
+            android:id="@+id/colorsTv"
             style="@style/CategoryStyle"
             android:background="?android:attr/selectableItemBackground"
             android:text="@string/category_colors" />
@@ -49,7 +49,7 @@
         android:layout_height="wrap_content"
         android:background="@color/category_phrases">
         <TextView
-            android:id="@+id/phrases"
+            android:id="@+id/phrasesTv"
             style="@style/CategoryStyle"
             android:background="?android:attr/selectableItemBackground"
             android:text="@string/category_phrases" />

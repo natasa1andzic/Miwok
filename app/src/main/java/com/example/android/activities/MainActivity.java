@@ -24,22 +24,22 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView numbers;
-    TextView family;
-    TextView colors;
-    TextView phrases;
+    private TextView numbersTv;
+    private TextView familyTv;
+    private TextView colorsTv;
+    private TextView phrasesTv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        numbers = (TextView) findViewById(R.id.numbers);
-        family = (TextView) findViewById(R.id.family);
-        colors = (TextView) findViewById(R.id.colors);
-        phrases = (TextView) findViewById(R.id.phrases);
+        numbersTv = (TextView) findViewById(R.id.numbersTv);
+        familyTv = (TextView) findViewById(R.id.familyTv);
+        colorsTv = (TextView) findViewById(R.id.colorsTv);
+        phrasesTv = (TextView) findViewById(R.id.phrasesTv);
 
-        numbers.setOnClickListener(new OnClickListener() {
+        numbersTv.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent numbersIntent = new Intent(MainActivity.this, NumbersActivity.class);
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        family.setOnClickListener(new OnClickListener() {
+        familyTv.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent familyIntent = new Intent(MainActivity.this, FamilyActivity.class);
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        colors.setOnClickListener(new OnClickListener() {
+        colorsTv.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent colorsIntent = new Intent(MainActivity.this, ColorsActivity.class);
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        phrases.setOnClickListener(new OnClickListener() {
+        phrasesTv.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent phrasesIntent = new Intent(MainActivity.this, PhrasesActivity.class);
